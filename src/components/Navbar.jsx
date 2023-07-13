@@ -1,10 +1,13 @@
-
 import {
   Box,
   Button,
   Center,
   Flex,
   Heading,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
   Stack,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
@@ -29,7 +32,6 @@ export const Navbar = () => {
     setMail(localStorage.getItem("email") || "");
   }, []);
 
-
   const handleLogin = () => {
     signInWithPopup(auth, provider)
       .then((data) => {
@@ -41,9 +43,10 @@ export const Navbar = () => {
       });
   };
 
-  console.log(mail)
+  console.log(mail);
   return (
     <>
+      {/* Phone Nav */}
       <Center
         width={"100%"}
         position={"fixed"}
@@ -65,10 +68,13 @@ export const Navbar = () => {
             _hover={{ ".nav_text": { opacity: 1 } }}
           >
             <Link to={"/"}>
-              <NavComp icon={<MdCatchingPokemon />} />
+              <NavComp icon={<MdOutlineMovieFilter />} />
             </Link>
-            <Link to={"/bookmarks"}>
+            <Link to={"/favourites"}>
               <NavComp icon={<BsBookmark />} />
+            </Link>
+            <Link to={"/watchlist"}>
+              <NavComp icon={<MdOutlineWatchLater />} />
             </Link>
             <Link to={"/search"}>
               <NavComp icon={<FaSearchengin />} />
@@ -78,6 +84,7 @@ export const Navbar = () => {
       </Center>
       {/* Phone Nav */}
 
+      {/* Main Nav  */}
       <Center
         width={"100%"}
         position={"fixed"}
@@ -110,24 +117,34 @@ export const Navbar = () => {
             <Link to={"/"}>
               <NavComp child={"Movies"} icon={<MdOutlineMovieFilter />} />
             </Link>
-            <Link to={"/bookmarks"}>
-              <NavComp child={`Watchs`} icon={<MdOutlineWatchLater />} />
+            <Link to={"/favourites"}>
+              <NavComp child={`Favourites`} icon={<BsBookmark />} />
             </Link>
-            <Link to={"/books"}>
-              <NavComp child={`Wish`} icon={<BsBookmark />} />
+            <Link to={"/watchlist"}>
+              <NavComp child={`Watchlist`} icon={<MdOutlineWatchLater />} />
             </Link>
             <Link to={"/search"}>
               <NavComp child={"Search"} icon={<FaSearchengin />} />
             </Link>
           </Stack>
           <Stack direction={"row"} spacing="24px">
-            {mail ? <Button onClick={()=>{
-                localStorage.removeItem('email')
-                setMail("")
-            }}>Logout</Button> : <Button onClick={handleLogin}>Login</Button>}
+            {mail ? (
+              <Button
+              colorScheme="red"
+                onClick={() => {
+                  localStorage.removeItem("email");
+                  setMail("");
+                }}
+              >
+                Logout
+              </Button>
+            ) : (
+              <Button onClick={handleLogin}>Login</Button>
+            )}
           </Stack>
         </Flex>
       </Center>
+      {/* Main Nav  */}
     </>
   );
 };
