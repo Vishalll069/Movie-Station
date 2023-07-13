@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { auth, provider } from "../firebase.js";
 import { signInWithPopup } from "firebase/auth";
 import { Home } from "./Home";
+import { Box } from "@chakra-ui/react";
 
 export const Login = () => {
   const [value, setValue] = useState("");
@@ -20,10 +21,10 @@ export const Login = () => {
   }, []);
 
   return (
-    <div>
+    <Box mt={'10rem'}>
         {
             value ? <Home/> :<button onClick={handleLogin}>Login With Google</button>
         }
-    </div>
+    </Box>
   );
 };
