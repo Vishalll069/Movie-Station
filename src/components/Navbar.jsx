@@ -58,7 +58,7 @@ export const Navbar = () => {
       >
         <Flex justifyContent={"space-between"}>
           <Box>
-            <Heading>Movie-Station</Heading>
+            <Heading>Movie Station</Heading>
           </Box>
           <Stack
             bg={"transparent"}
@@ -75,9 +75,6 @@ export const Navbar = () => {
             </Link>
             <Link to={"/watchlist"}>
               <NavComp icon={<MdOutlineWatchLater />} />
-            </Link>
-            <Link to={"/search"}>
-              <NavComp icon={<FaSearchengin />} />
             </Link>
           </Stack>
         </Flex>
@@ -105,7 +102,7 @@ export const Navbar = () => {
           style={{ transition: "all 300ms ease " }}
         >
           <Box>
-            <Heading>Movie-Station</Heading>
+            <Heading>Movie Station</Heading>
           </Box>
           <Stack
             bg={"transparent"}
@@ -122,9 +119,6 @@ export const Navbar = () => {
             </Link>
             <Link to={"/watchlist"}>
               <NavComp child={`Watchlist`} icon={<MdOutlineWatchLater />} />
-            </Link>
-            <Link to={"/search"}>
-              <NavComp child={"Search"} icon={<FaSearchengin />} />
             </Link>
           </Stack>
           <Stack direction={"row"} spacing="24px">

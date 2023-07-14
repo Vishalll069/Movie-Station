@@ -7,7 +7,7 @@ export const NavComp = ({ child, to, icon }) => {
       bg={"transparent"}
       style={{ transition: "all 300ms ease " }}
       _hover={{
-        transform: "scale(1.2)",
+        transform: "scale(1.1)",
         zIndex: "2",
         fontWeight: "800",
         background: "linear-gradient(to right, #ff00cc, #FFD700)",
@@ -21,7 +21,7 @@ export const NavComp = ({ child, to, icon }) => {
         <Flex
           className="nav_text"
           ml={"1rem"}
-          fontSize={"1.5rem"}
+          fontSize={"1rem"}
           fontWeight={"500"}
           color={"white"}
           justifyContent={'center'}
