@@ -22,7 +22,7 @@ import {
 import { FaSearchengin } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { NavComp } from "./NavComponent";
+import { NavComp } from "./Navcomponent";
 
 export const Navbar = () => {
   const [mail, setMail] = useState("");

@@ -21,8 +21,8 @@ export const NavComp = ({ child, to, icon }) => {
         <Flex
           className="nav_text"
           ml={"1rem"}
-          fontSize={"1rem"}
-          fontWeight={"500"}
+          fontSize={"1.2rem"}
+          fontWeight={"600"}
           color={"white"}
           justifyContent={'center'}
           alignItems={'center'}
